@@ -1,0 +1,25 @@
+console.clear();
+const nomes: string[] = ['Ana', 'Abigail', 'Pedro', 'Rafael'];
+console.log(nomes);
+
+/* Pop() -> remove o último elemento de um array e retorna este elemento */
+let elementoRemovido = nomes.pop(); //remove o último elemento
+console.log(nomes); //['Ana', 'Abigail', 'Pedro'];
+console.log(elementoRemovido); // 'Rafael'
+
+/* Shift() -> remove o primeiro elemento de um array e retorna esse elemento */
+elementoRemovido = nomes.shift();
+console.log(nomes); //['Abigail', 'Pedro'];
+console.log(elementoRemovido); // 'Ana'
+
+/* Push() -> adiciona um ou mais elementos ao final de um array e retorna o tamanho deste array */
+let tamanho = nomes.push('Ana', 'Vik');
+console.log(nomes); //['Abigail', 'Pedro', 'Ana', 'Vik'];
+console.log(tamanho); // 4
+
+/* Unshift() -> adiciona um ou mais elementos no início de um array e retorna o tamanho deste array */
+tamanho = nomes.unshift('Rogério', 'Cleiton');
+console.log(nomes); //['Rogério', 'Cleiton', 'Abigail', 'Pedro', 'Ana', 'Vik'];
+console.log(tamanho); // 6
+
+

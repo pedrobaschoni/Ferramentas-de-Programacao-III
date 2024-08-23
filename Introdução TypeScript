@@ -1,0 +1,137 @@
+//Limpa o console
+console.clear();
+
+//Exibe uma mensagem no console
+console.log("Hello World!");
+
+//Declaração
+//var (NÃO DEVE UTILIZAR) -> Como se fosse uma variável global. Hoisting.
+//let, const -> possui escopo na declaração
+
+if (true) {
+    let x = 0;
+    x = x + 1; //Correto, pois está no escopo do if
+}
+//x = x + 1; (Não pode, pois está fora do escopo do if aonde a variável foi declarada)
+
+let x: number = 0; //Tipo explicido e valor inicial
+let y: number; //Tipo explicido
+let z = 0; // Inferência de tipo
+//z = "a"; (Não pode, pois o valor da variável ja foi atribuido na criação da mesma)
+
+//Tipos de variáveis
+//number -> Números inteiros ou reais
+//string -> Palavras ou caracteres
+//boolean -> Verdadeiro ou Falso
+//any -> Qualquer coisa (número, string, boolean, objeto, sua mãe...)
+
+let PI: number = 3.14;
+PI = 9;
+
+let nome: string = '';
+nome = '9';
+
+let achou: boolean = true;
+achou = false;
+//achou = 0;
+
+let valor: any = 0;
+valor = 'a';
+valor = true;
+
+//Inferência de Tipos
+let a = 1; //number
+let b = '2' //string
+let c = true //boolean
+let d; //any
+
+//Operadores aritméticos
+// + - * / %
+
+//Operadores relacionais
+// > < >= <= == === (compara o valor e o tipo) !=
+
+// 9 == '9' (true)
+//9 === '9' (false)
+
+//Operadores lógicos
+// && || !
+
+//Estrutura condicional
+if (a > 9) {
+
+} else if (b != ""){
+
+} else {
+
+}
+
+//switch / case
+switch(a) {
+    case 1:
+        console.log("xxxx");
+        break;
+    case 2:
+        break;
+    default: 
+        console.log("Default")
+}
+
+//Estruturas de repetição
+while(a > 0) {
+
+}
+
+for(let i = 0; i < 5; i++) {
+
+}
+
+do {
+
+} while (a < 0);
+
+//Array
+const numeros: number[] = [];
+console.log(numeros[0]); //1
+
+numeros[3] = 100; //[1, 2, 3, 100]
+for (let i = 0; i < numeros.length; i++) {
+    console.log(numeros[i]);
+}
+
+for (let x of numeros) {
+    console.log(x);
+}
+
+//Funções
+
+//function nome-da-funcao tipo-retorno
+function teste(): number {
+    return 0;
+}
+
+function teste2() { // OU function teste2(): void { }
+    return '';
+}
+
+function somar(a: number, b: number): number {
+    return a + b;
+}
+
+const resultado = somar(1, 2);
+
+//Função anônima
+const funcaoAnonima = function(x: number): void {
+
+}
+
+//Executando a função anônima
+funcaoAnonima(100);
+
+//Arrow function
+
+(x: number): boolean => {
+    return true;
+}
+
+

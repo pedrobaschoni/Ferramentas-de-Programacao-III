@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Aula 02
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h3>Interpolação: {{ nome }}</h3>
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="nome" label="Informe o nome:"></ion-input>
+    </ion-item>
+
+
+  </ion-list>
+
+
+  <ion-button (click)="adicionar()" expand="block">Adicionar</ion-button>
+
+  <!--
+  <ion-toast 
+          [isOpen]="showMessage" 
+          message="Nome: {{ nome }} Adicionado com Sucesso!" 
+          [duration]="3000" 
+          (didDismiss)="setShowMessage(false)">
+  </ion-toast>
+
+  -->
+
+
+
+
+  <ion-grid *ngIf="nomes.length > 0">
+
+    <ion-searchbar [debounce]="1000"></ion-searchbar>
+
+    <ion-row>
+      <ion-col><strong>Nome</strong></ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item of nomes; let i = index">
+      <ion-col>{{ item }}</ion-col>
+
+      <ion-col>
+        <span (click)="excluir(i)">Excluir</span>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col><strong>Quantidade: {{ nomes.length }}</strong></ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

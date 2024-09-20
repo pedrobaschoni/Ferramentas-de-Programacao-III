@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Atividade 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h3>Cadastro de Tarefas</h3>
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="nome" label="Nome da tarefa:"></ion-input>
+    </ion-item>
+
+
+  </ion-list>
+
+
+  <ion-button (click)="adicionar()" expand="block">Adicionar</ion-button>
+
+  <ion-grid *ngIf="nomes.length > 0">
+
+
+    <ion-row>
+      <ion-col><strong>Descrição</strong></ion-col>
+      <ion-col><strong>Status</strong></ion-col>
+      <ion-col><strong>Ações</strong></ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item of nomes; let i = index">
+      <ion-col>{{ item }}</ion-col>
+      <ion-col>{{ getStatus(i) }}</ion-col>
+
+      <ion-col>
+        <button class="btn btn-andamento" (click)="andamento(i)">Iniciar</button>
+        <button class="btn btn-finalizar" (click)="finalizar(i)">Finalizar</button>
+        <button class="btn btn-cancelar" (click)="cancelar(i)">Cancelar</button>
+        <button class="btn btn-excluir" (click)="excluir(i)">Excluir</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col><strong>Quantidade: {{ nomes.length }}</strong></ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>
